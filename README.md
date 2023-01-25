@@ -6,32 +6,19 @@ Solutions of certain partial differential equations (PDEs) are often represented
 
 That means rather than only optimizing an energy $$\min_\theta \mathcal{A}(u_\theta)  $$ for a neural network $u$ with parameter $\theta$, we optimize $$\theta_{k+1}:= \min_\theta \|u_k - u_\theta \| +\tau \mathcal{A}(u_\theta) $$ and iterate this over $k$.
 
----
-header-includes:
-  - \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
----
-# Algorithm 1
-Just a sample algorithmn
-\begin{algorithm}[H]
-\DontPrintSemicolon
-\SetAlgoLined
-\KwResult{Write here the result}
-\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
-\Input{Write here the input}
-\Output{Write here the output}
-\BlankLine
-\While{While condition}{
-    instructions\;
-    \eIf{condition}{
-        instructions1\;
-        instructions2\;
-    }{
-        instructions3\;
-    }
-}
-\caption{While loop with If/Else condition}
-\end{algorithm} 
-
+```
+\State Guess $\theta_0$
+ \For{$k=0,...,K$}
+ \State $v_k$ \gets \text{NN with parameter } $\theta_k$ in Evaluation mode only
+ \State  $\theta_{k+1}\gets \theta_k$
+ \State $v_{k+1}$\gets \text{NN with parameter }$\theta_{k+1}$
+ \For{Number of Trainingssteps}
+    \State Loss function\gets $\Phi( \theta_{k+1} , \theta_k)$
+    \State Backpropagate for training $v_{k+1}$
+    \State Make Optimization step
+ \EndFor   
+ \EndFor
+```
 
 * [Learning Geometric Phase Field representations](https://drive.google.com/drive/u/0/folders/1LKQha7mYWvPzKKS2yC0zf_19FEzRlly8) (Yannick Kees 2022)
 
