@@ -24,10 +24,13 @@ for k in 1,..,K
 ```
 ---
 
-For the energy we choose a modified version of the Ambrosio-Tortorelli energy: $$ \mathcal{A}(u)=\int_\Omega \frac{1}{4\varepsilon}(1-u)^2+\varepsilon \|\nabla u \|^2 dx + \sum_{p\in P}|u(p)|  $$
+For the energy we choose a modified version of the Ambrosio-Tortorelli energy: 
+$$ \mathcal{A}(u)=\int_\Omega \frac{1}{4\varepsilon}(1-u)^2+\varepsilon \|\nabla u \|^2 dx + \sum_{p\in P}|u(p)|  $$
 * [Learning Geometric Phase Field representations](https://drive.google.com/drive/u/0/folders/1LKQha7mYWvPzKKS2yC0zf_19FEzRlly8) (Yannick Kees 2022)
 
 This means the network should represent the phase field representation of a surface from where the points $P$ were sampled, in this case a square:
+
+
 <img src="images/pf00020.jpg" height="402pt">
 
 
